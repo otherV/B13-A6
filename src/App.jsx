@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Stats from "./components/stats/Stats";
 import NavBar from "./components/nav/NavBar";
 import Banner from "./components/banner/Banner";
@@ -16,16 +16,17 @@ const fetchProducts = async () => {
 
 function App() {
   const productsPromise = fetchProducts();
+  const [cartArray, setCartArray] = useState([]);
   return (
     <>
-      <NavBar />
+      <NavBar cartArray={cartArray} />
 
       <Banner />
 
       <Stats />
 
       <Suspense fallback={<span className="loading loading-spinner loading-xs"></span>}>
-        <Products productsPromise={productsPromise} />
+        <Products productsPromise={productsPromise} cartArray={cartArray} setCartArray={setCartArray} />
       </Suspense>
 
       <Steps />

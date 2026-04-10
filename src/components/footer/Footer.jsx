@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className="text-[white] bg-[#101727] w-full">
-            <div className="mx-auto max-w-9/10">
+            <div className="mx-auto max-w-3/4">
                 <div className="flex">
                     <div>
                         <h1>DigiTools</h1>

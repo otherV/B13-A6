@@ -2,14 +2,14 @@ import React from 'react';
 
 const Plans = () => {
     return (
-        <div className="w-full bg-base-100">
-        <div className="mx-auto max-w-9/10">
+        <div className="w-full bg-base-100 text-center py-30">
+        <div className="mx-auto max-w-3/4">
           <div className="text-center">
-            <h1>Simple, Transparent Pricing</h1>
-            <p>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
+            <h1 className="text-[48px] font-extrabold text-dark">Simple, Transparent Pricing</h1>
+            <p className="text-grey mt-4 mb-10">Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
           </div>
-          <div className="flex">
-            <div className="card w-96 bg-base-100 shadow-sm">
+          <div className="flex justify-center">
+            <div className="card w-96 bg-[#F9FAFC] shadow-sm">
               <div className="card-body">
                 <span className="badge badge-xs badge-warning">Most Popular</span>
                 <div className="flex justify-between">
@@ -47,7 +47,7 @@ const Plans = () => {
                 </div>
               </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-sm">
+            <div className="card w-96 bg-grad shadow-sm">
               <div className="card-body">
                 <span className="badge badge-xs badge-warning">Most Popular</span>
                 <div className="flex justify-between">
@@ -85,7 +85,7 @@ const Plans = () => {
                 </div>
               </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-sm">
+            <div className="card w-96 bg-[#F9FAFC] shadow-sm">
               <div className="card-body">
                 <span className="badge badge-xs badge-warning">Most Popular</span>
                 <div className="flex justify-between">

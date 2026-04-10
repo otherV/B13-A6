@@ -2,26 +2,27 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="w-full bg-base-100">
-            <div className="mx-auto max-w-9/10 flex">
-                <div className="w-3/5 flex-col">
-                    <div role="alert" className="alert alert-info">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="h-6 w-6 shrink-0 stroke-current">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span>New: AI-Powered Tools Available</span>
-                    </div>
-                    <h1>Supercharge Your Digital Workflow</h1>
-                    <p>Access premium AI tools, design assets, templates, and productivity
-                        software—all in one place. Start creating faster today.
+        <div className="w-full bg-base-100 pt-15">
+            <div className="mx-auto max-w-3/4 flex">
+                <div className="w-6/10 flex-col py-15 pr-15">
+                    <span className="py-1 px-4 bg-[#E1E7FF] rounded-full">
+                        <div className="status status-primary mr-2 -mt-1 animate-ping"></div>
+                        <span className="bg-linear-to-r from-[#4F39F6] to-[#9200F6] bg-clip-text text-transparent">
+                            New: AI-Powered Tools Available
+                        </span>
+                    </span>
+
+                    <h1 className="text-6xl font-extrabold my-4">Supercharge Your Digital Workflow</h1>
+                    <p className="text-lg text-grey">Access premium AI tools, design assets, templates, and productivity<br/>
+                        software—all in one place. Start creating faster today.<br/>
                         Explore Products
                     </p>
-                    <div className="flex">
+                    <div className="flex mt-8">
                         <a className="btn">Explore Products</a>
                         <a className="btn">Watch Demo</a>
                     </div>
                 </div>
-                <div className="w-2/5">
+                <div className="w-4/10">
                     <img className="w-full h-auto block rounded-md" src="../src/assets/banner.png" alt="" />
                 </div>
             </div>

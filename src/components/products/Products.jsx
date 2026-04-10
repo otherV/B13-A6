@@ -1,44 +1,25 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
+import ProductsList from './ProductsList/ProductsList';
+import Cart from './Cart/Cart';
 
-const Products = ({ productsPromise }) => {
+const Products = ({ productsPromise, cartArray, setCartArray }) => {
     const productsArray = use(productsPromise);
+    const [toggleValue, setToggleValue] = useState("products");
+    const [totalBill, setTotalBill] = useState(0);
     return (
-        <div className="w-full bg-base-100 text-center">
-            <h1>Premium Digital Tools</h1>
-            <p>Choose from our curated collection of premium digital products designed to boost your productivity and creativity.</p>
-            <div className="mx-auto max-w-9/10 tabs tabs-box flex justify-center bg-[white]">
-                <input type="radio" name="products_tabs" className="tab" aria-label="Products" defaultChecked />
-                <div className="tab-content bg-base-100 p-6 grid grid-cols-3 gap-3">
-
-                    {productsArray.map((product) => {
-                        return (
-                            <div key={product.id} className="card bg-base-100 shadow-sm">
-                                <div className="card-body">
-                                    <span className="badge badge-xs badge-warning">Most Popular</span>
-                                    <h2 className="text-3xl font-bold">{product.name}</h2>
-                                    <p>{product.description}</p>
-                                    <p className="text-xl">${product.price}/{product.period}</p>
-                                    <ul className="mt-6 flex flex-col gap-2 text-xs">
-                                        {product.features.map((feature, index) => {
-                                            return (
-                                                <li key={index}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                                    <span>{feature}</span>
-                                                </li>
-                                            );
-                                        })}
-                                    </ul>
-                                    <div className="mt-6">
-                                        <button className="btn btn-primary btn-block">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
+        <div className="w-full bg-base-100 text-center py-30">
+            <h1 className="text-5xl font-extrabold text-dark">Premium Digital Tools</h1>
+            <p className="text-base text-grey my-4">Choose from our curated collection of premium digital products designed<br /> to boost your productivity and creativity.</p>
+            <div className="mx-auto max-w-3/4 bg-[white]">
+                <div className="flex justify-center items-center">
+                    <div className="w-fit border-2 border-[#f6f6f6] bg-[white] rounded-full">
+                        <button onClick={() => setToggleValue("products")} className={`btn btn-xl rounded-full hover:bg-[grey] ${toggleValue === "products" ? `bg-grad text-[white]` : `bg-[white] border-none shadow-none`}`}>Products</button>
+                        <button onClick={() => setToggleValue("cart")} className={`btn btn-xl rounded-full hover:bg-[grey] ${toggleValue === "cart" ? `bg-grad text-[white]` : `bg-[white] border-none shadow-none`}`}>Cart({cartArray.length})</button>
+                    </div>
                 </div>
-
-                <input type="radio" name="products_tabs" className="tab" aria-label="Cart (0)" />
-                <div className="tab-content bg-base-100 border-base-300 p-6">Cart</div>
+                {toggleValue === "products" ? 
+                <ProductsList productsArray={productsArray} cartArray={cartArray} setCartArray={setCartArray} totalBill={totalBill} setTotalBill={setTotalBill} /> : 
+                <Cart cartArray={cartArray} setCartArray={setCartArray} totalBill={totalBill} setTotalBill={setTotalBill} />}
             </div>
         </div>
     );
