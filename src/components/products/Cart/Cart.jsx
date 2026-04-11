@@ -16,7 +16,7 @@ const Cart = ({ cartArray, setCartArray, totalBill, setTotalBill }) => {
                                     <div className="text-xs uppercase font-semibold opacity-60">${item.price}</div>
                                 </div>
                             </div>
-                            <button onClick={() => {setCartArray(cartArray.filter(a => a.id !== item.id)); setTotalBill(totalBill-parseInt(item.price));}} className="btn btn-ghost text-[red]">
+                            <button onClick={() => {setCartArray(cartArray.filter((a, idx) => idx !== index)); setTotalBill(totalBill-parseInt(item.price));}} className="btn btn-ghost text-[red]">
                                 remove
                             </button>
                         </div>

@@ -13,8 +13,8 @@ const Products = ({ productsPromise, cartArray, setCartArray }) => {
             <div className="mx-auto max-w-3/4 bg-[white]">
                 <div className="flex justify-center items-center">
                     <div className="w-fit border-2 border-[#f6f6f6] bg-[white] rounded-full">
-                        <button onClick={() => setToggleValue("products")} className={`btn btn-xl rounded-full hover:bg-[grey] ${toggleValue === "products" ? `bg-grad text-[white]` : `bg-[white] border-none shadow-none`}`}>Products</button>
-                        <button onClick={() => setToggleValue("cart")} className={`btn btn-xl rounded-full hover:bg-[grey] ${toggleValue === "cart" ? `bg-grad text-[white]` : `bg-[white] border-none shadow-none`}`}>Cart({cartArray.length})</button>
+                        <button onClick={() => setToggleValue("products")} className={`btn btn-xl rounded-full ${toggleValue === "products" ? `bg-grad text-[white]` : `bg-[white] hover:bg-[grey] border-none shadow-none`} text-base`}>Products</button>
+                        <button onClick={() => setToggleValue("cart")} className={`btn btn-xl rounded-full ${toggleValue === "cart" ? `bg-grad text-[white]` : `bg-[white] hover:bg-[grey] border-none shadow-none`} text-base`}>Cart({cartArray.length})</button>
                     </div>
                 </div>
                 {toggleValue === "products" ? 
