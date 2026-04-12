@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import { toast } from 'react-toastify';
 
 const ProductsList = ({ productsArray, setCartArray, setTotalBill, setCartCount }) => {
 
@@ -29,6 +30,8 @@ const ProductsList = ({ productsArray, setCartArray, setTotalBill, setCartCount 
         setCartCount(a => a + 1);
 
         setTotalBill(b => b + parseInt(item.price));
+
+        toast.success("Item Added to Cart!");
     };
 
     return (
