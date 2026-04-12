@@ -12,7 +12,7 @@ const Steps = () => {
             <div className="card bg-base-100 w-96 shadow-sm">
               <div className="card-body">
                 <div className="card-actions justify-end">
-                  <div class="badge badge-primary badge-xs">
+                  <div className="badge badge-primary badge-xs">
                     01
                   </div>
                 </div>
@@ -22,7 +22,7 @@ const Steps = () => {
             <div className="card bg-base-100 w-96 shadow-sm">
               <div className="card-body">
                 <div className="card-actions justify-end">
-                  <div class="badge badge-primary badge-xs">
+                  <div className="badge badge-primary badge-xs">
                     02
                   </div>
                 </div>
@@ -32,7 +32,7 @@ const Steps = () => {
             <div className="card bg-base-100 w-96 shadow-sm">
               <div className="card-body">
                 <div className="card-actions justify-end">
-                  <div class="badge badge-primary badge-xs">
+                  <div className="badge badge-primary badge-xs">
                     03
                   </div>
                 </div>

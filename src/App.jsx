@@ -16,17 +16,18 @@ const fetchProducts = async () => {
 
 function App() {
   const productsPromise = fetchProducts();
-  const [cartArray, setCartArray] = useState([]);
+  const [cartArray, setCartArray] = useState({});
+  const [cartCount, setCartCount] = useState(0);
   return (
     <>
-      <NavBar cartArray={cartArray} />
+      <NavBar cartCount={cartCount} />
 
       <Banner />
 
       <Stats />
 
       <Suspense fallback={<span className="loading loading-spinner loading-xs"></span>}>
-        <Products productsPromise={productsPromise} cartArray={cartArray} setCartArray={setCartArray} />
+        <Products productsPromise={productsPromise} cartArray={cartArray} setCartArray={setCartArray} cartCount={cartCount} setCartCount={setCartCount} />
       </Suspense>
 
       <Steps />

@@ -1,25 +1,42 @@
 import React from 'react';
+import CartCard from './CartCard';
 
-const Cart = ({ cartArray, setCartArray, totalBill, setTotalBill }) => {
-    console.log(cartArray);
+const Cart = ({ cartArray, setCartArray, totalBill, setTotalBill, setCartCount }) => {
+
+    const handleRemove = (price, itemId) => {
+
+        setCartArray(currentCart => {
+            const existingItem = currentCart[itemId];
+
+            if (existingItem.count > 1) {
+                return {
+                    ...currentCart,
+                    [itemId]: {
+                        ...existingItem,
+                        count: existingItem.count - 1
+                    }
+                };
+            } else {
+                const newCart = { ...currentCart };
+                delete newCart[itemId];
+                return newCart;
+            }
+        });
+
+        setCartCount(b => b - 1);
+
+        setTotalBill(a => a - price);
+    };
+
     return (
         <div className="bg-base-100 border-base-300 p-6">
             <h1 className="text-2xl">Your Cart</h1>
             <div className="grid grid-cols-1 gap-3">
-                {cartArray.map((item, index) => {
+                {Object.values(cartArray).map((item) => {
                     return (
-                        <div key={index} className="flex justify-between items-center bg-[#F9FAFC] rounded-lg p-3">
-                            <div className="flex">
-                                <div className="p-3 rounded-full">{item.icon}</div>
-                                <div className="text-start">
-                                    <div>{item.name}</div>
-                                    <div className="text-xs uppercase font-semibold opacity-60">${item.price}</div>
-                                </div>
-                            </div>
-                            <button onClick={() => {setCartArray(cartArray.filter((a, idx) => idx !== index)); setTotalBill(totalBill-parseInt(item.price));}} className="btn btn-ghost text-[red]">
-                                remove
-                            </button>
-                        </div>
+
+                        <CartCard key={item.product.id} item={item} handleRemove={handleRemove} />
+
                     );
                 })}
             </div>

@@ -45,7 +45,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <hr class="border-[1px] opacity-6"></hr>
+                <hr className="border-[1px] opacity-6"></hr>
                 <div className="flex justify-between">
                     <div>
                         <p>© 2026 Digitools. All rights reserved.</p>

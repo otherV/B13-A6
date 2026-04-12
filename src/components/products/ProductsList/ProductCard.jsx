@@ -7,7 +7,6 @@ const ProductCard = ({ product, handleCartBill }) => {
         setCounter(a => a + 1);
         setTimeout(() => {
             setCounter(b => b - 1);
-            console.log(counter);
         }, 2000);
     };
 
