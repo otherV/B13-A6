@@ -39,9 +39,9 @@ const Cart = ({ cartArray, setCartArray, totalBill, setTotalBill, setCartCount }
     }
 
     return (
-        <div className="bg-base-100 border-base-300 p-6">
-            <h1 className="text-2xl">Your Cart</h1>
-            <div className="grid grid-cols-1 gap-3">
+        <div className="bg-base-100 border border-[#F2F2F2] rounded-xl p-10">
+            <h1 className="text-2xl font-bold text-start">Your Cart</h1>
+            <div className="grid grid-cols-1 gap-4 my-6">
                 {Object.values(cartArray).map((item) => {
                     return (
 
@@ -51,9 +51,9 @@ const Cart = ({ cartArray, setCartArray, totalBill, setTotalBill, setCartCount }
                 })}
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-6">
                 <span className="text-base text-grey">Total:</span>
-                <span className="text-2xl text-dark">${totalBill}</span>
+                <span className="text-2xl text-dark font-bold">${totalBill}</span>
             </div>
 
             <div className="w-full">

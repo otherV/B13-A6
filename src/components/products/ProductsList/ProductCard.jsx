@@ -14,8 +14,12 @@ const ProductCard = ({ product, handleCartBill }) => {
 
         <div key={product.id} className="card bg-base-100 shadow-sm">
             <div className="card-body flex flex-col items-start text-start">
-                <div className="absolute top-4 right-4 bg-[#fef3c7] text-[#92400e] text-sm font-medium px-4 py-1 rounded-full">
-                    Best Seller
+                <div className={`absolute top-4 right-4 text-sm font-medium px-4 py-1 rounded-full ${
+                    (product.tagType === "best seller") ? `bg-[#fef3c7] text-[#92400e]` :
+                        (product.tagType === "new") ? `bg-[#DBFCE7] text-[#0A883E]` :
+                            `bg-[#E1E7FF] text-[#4F39F6]`
+                    }`}>
+                    {product.tag}
                 </div>
 
                 <div className="w-16 h-16 bg-grey border border-slate-100 rounded-full flex items-center justify-center mb-4">

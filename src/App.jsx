@@ -27,7 +27,30 @@ function App() {
 
       <Stats />
 
-      <Suspense fallback={<span className="loading loading-spinner loading-xs"></span>}>
+      <Suspense fallback={
+
+        <div className="w-full text-center p-6">
+          <h1 className="text-4xl text-center mx-6 text-dark">
+            Loading Products...
+          </h1>
+          <span className="loading loading-bars loading-xs"></span>
+          <span className="loading loading-bars loading-sm"></span>
+          <span className="loading loading-bars loading-md"></span>
+          <span className="loading loading-bars loading-lg"></span>
+          <span className="loading loading-bars loading-xl"></span>
+          <span className="loading loading-bars loading-xs"></span>
+          <span className="loading loading-bars loading-sm"></span>
+          <span className="loading loading-bars loading-md"></span>
+          <span className="loading loading-bars loading-lg"></span>
+          <span className="loading loading-bars loading-xl"></span>
+          <span className="loading loading-bars loading-xs"></span>
+          <span className="loading loading-bars loading-sm"></span>
+          <span className="loading loading-bars loading-md"></span>
+          <span className="loading loading-bars loading-lg"></span>
+          <span className="loading loading-bars loading-xl"></span>
+        </div>
+
+      }>
         <Products productsPromise={productsPromise} cartArray={cartArray} setCartArray={setCartArray} cartCount={cartCount} setCartCount={setCartCount} />
       </Suspense>
 

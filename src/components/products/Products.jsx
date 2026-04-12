@@ -24,7 +24,7 @@ const Products = ({ productsPromise, cartArray, setCartArray, cartCount, setCart
                 </div>
                 {toggleValue === "products" ?
                     <ProductsList productsArray={productsArray} setCartArray={setCartArray} setTotalBill={setTotalBill} setCartCount={setCartCount} /> :
-                    <Cart cartArray={cartArray} setCartArray={setCartArray} totalBill={totalBill} setTotalBill={setTotalBill} setCartCount={setCartCount} />}
+                    (cartCount === 0) ? <h1 className="text-3xl text-center text-grey pt-6">No Item in Cart</h1> : <Cart cartArray={cartArray} setCartArray={setCartArray} totalBill={totalBill} setTotalBill={setTotalBill} setCartCount={setCartCount} />}
             </div>
         </div>
     );
