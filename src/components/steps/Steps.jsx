@@ -13,7 +13,7 @@ const Steps = () => {
           </h1>
           <p className="text-base text-grey mb-10">Start using premium digital tools in minutes, not hours.</p>
         </div>
-        <div className="flex justify-center gap-7">
+        <div className="w-full grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 gap-7">
 
           <div className="card bg-base-100 border border-[#e8eaed] rounded-3xl px-10 py-24 relative text-center">
             <div className="absolute top-6 right-6 w-10 h-10 bg-grad rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -53,23 +53,27 @@ const Steps = () => {
             </div>
           </div>
 
-          <div className="card bg-base-100 border border-[#e8eaed] rounded-3xl px-10 py-24 relative text-center">
-            <div className="absolute top-6 right-6 w-10 h-10 bg-grad rounded-full flex items-center justify-center text-white font-bold text-sm">
-              03
-            </div>
+          <div className="col-span-1 md:col-span-2 lg:col-span-1 flex justify-center items-center">
 
-            <div className="flex justify-center mb-8">
-              <div className="w-24 h-24 bg-[#F5F3FF] rounded-full flex items-center justify-center">
-                <img src={rktLogo} />
+            <div className="w-full md:w-1/2 lg:w-full h-full card bg-base-100 border border-[#e8eaed] rounded-3xl px-10 py-24 relative text-center">
+              <div className="absolute top-6 right-6 w-10 h-10 bg-grad rounded-full flex items-center justify-center text-white font-bold text-sm">
+                03
+              </div>
+
+              <div className="flex justify-center mb-8">
+                <div className="w-24 h-24 bg-[#F5F3FF] rounded-full flex items-center justify-center">
+                  <img src={rktLogo} />
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-dark">Start Creating</h3>
+                <p className="text-grey text-base">
+                  Download and start using your premium tools immediately.
+                </p>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-dark">Start Creating</h3>
-              <p className="text-grey text-base">
-                Download and start using your premium tools immediately.
-              </p>
-            </div>
           </div>
 
         </div>

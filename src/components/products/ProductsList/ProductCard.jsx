@@ -27,14 +27,14 @@ const ProductCard = ({ product, handleCartBill }) => {
                 </div>
 
                 <h2 className="text-2xl font-bold mb-4">{product.name}</h2>
-                <p className="mb-4">{product.description}</p>
-                <p className="mb-4"><span className="text-xl text-dark">${product.price}</span><span className="text-base text-grey">/{product.period}</span></p>
+                <p className="mb-4 text-grey">{product.description}</p>
+                <p className="mb-4"><span className="text-xl text-dark font-bold">${product.price}</span><span className="text-base text-grey">/{product.period}</span></p>
                 <ul className="mb-4 flex flex-col items-start gap-2 text-xs">
                     {product.features.map((feature, index) => {
                         return (
                             <li key={index}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>{feature}</span>
+                                <span className="text-grey">{feature}</span>
                             </li>
                         );
                     })}

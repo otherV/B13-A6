@@ -35,7 +35,7 @@ const ProductsList = ({ productsArray, setCartArray, setTotalBill, setCartCount 
     };
 
     return (
-        <div className="bg-base-100 p-6 grid grid-cols-3 gap-3">
+        <div className="bg-base-100 p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 
             {productsArray.map((product) => {
                 return (

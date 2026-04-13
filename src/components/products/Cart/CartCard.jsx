@@ -4,10 +4,10 @@ const CartCard = ({ item, handleRemove }) => {
     return (
         <div key={item.product.id} className="flex justify-between items-center bg-[#F9FAFC] rounded-lg p-3">
             <div className="flex">
-                <div className="p-3 rounded-full">{item.product.icon}</div>
+                <div className="p-3 rounded-full bg-[white] border border-[#F2F2F2] mr-4">{item.product.icon}</div>
                 <div className="text-start">
-                    <div>{item.product.name}</div>
-                    <div className="text-xs uppercase font-semibold opacity-60">${item.product.price}</div>
+                    <div className="text-lg font-medium text-dark">{item.product.name}</div>
+                    <div className="text-xs uppercase font-semibold text-grey mt-2">${item.product.price}</div>
                 </div>
             </div>
             <div className="flex items-center gap-3">
